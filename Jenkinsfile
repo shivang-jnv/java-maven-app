@@ -16,7 +16,7 @@ pipeline {
         withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'PASS', usernameVariable: 'USER')]){
           sh 'docker build -t shivangjnv/java-maven-app:2.0 .'
           sh 'echo $PASS | docker login -u $USER --password-stdin'
-          sh 'docker push shivang/java-maven-app:2.0'
+          sh 'docker push shivangjnv/java-maven-app:2.0'
         }
       }
     }
