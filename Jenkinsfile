@@ -26,7 +26,7 @@ pipeline {
     stage("build image") {
       steps {
         script {
-          buildImage 'shivangjnv/java-maven-app:2.0'
+          buildImage 'shivangjnv/java-maven-app:3.0'
         }
       }
     }
