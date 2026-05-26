@@ -1,3 +1,5 @@
+#!/user/bin/env groovy
+
 def gv
 
 pipeline {
@@ -13,20 +15,28 @@ pipeline {
         }
       }
     }
-    stage("build jar") {
-      steps {
+    stage ("increment version") {
+      steps{
         script{
-          gv.buildJar()
+          gv.incrementVersion()
         }
       }
     }
+     stage("build jar") {
+            steps {
+                script {
+                    gv.buildJar()
+
+                }
+            }
+        }
     stage("build image") {
-      steps {
-        script {
-          gv.buildImage()
+            steps {
+                script {
+                    gv.buildImage()
+                }
+            }
         }
-      }
-    }
     stage("deploy") {
       steps {
         script {
