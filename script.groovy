@@ -35,7 +35,7 @@ def commitVersion(){
         sh 'git branch'
         sh 'git config --list'
 
-        sh "git remote set-url origin https://${USER}:{PASS}@github.com/shivang-jnv/java-maven-app.git"
+        sh "git remote set-url origin https://${USER}:${PASS}@github.com/shivang-jnv/java-maven-app.git"
         sh 'git add .'
         sh 'git commit -m "ci: version bump"'
         sh 'git push origin HEAD:jenkins-jobs'
