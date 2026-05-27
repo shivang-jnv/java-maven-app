@@ -23,7 +23,7 @@ def buildImage() {
 }
 
 def deployApp() {
-    echo 'deploying the application...'
+    echo 'deploying the application as a final step...'
 }
 
 def commitVersion(){
